@@ -2,10 +2,15 @@ import { notFound } from 'next/navigation'
 import { allBlogs } from 'contentlayer/generated'
 import MDX from '@/components/MDX'
 
+type Props = {
+  params: { slug: string }
+}
+
 export const generateStaticParams = async () => allBlogs.map((item) => ({ slug: item.slug }))
 
-export const generateMetadata = async ({ params }) => {
+export const generateMetadata = async ({ params }: Props) => {
   const blog = allBlogs.find((item) => item.slug === params.slug)
+  if(!blog) return null
   return {
     title: `${blog.title} - Kiera's Blog`,
     description: blog.description,
@@ -13,7 +18,7 @@ export const generateMetadata = async ({ params }) => {
   }
 }
 
-export default async function Page({ params }) {
+export default async function Page({ params }: Props) {
   const blog = allBlogs.find((item) => item.slug === params.slug)
 
   if (!blog) {
