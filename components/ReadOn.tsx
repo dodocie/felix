@@ -1,5 +1,5 @@
 'use client'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import Link from 'next/link'
 import styles from '@/app/page.module.css'
 import ArrowRight from '@/icons/ArrowRight'
@@ -7,10 +7,17 @@ import { ReadingContext } from '@/hooks/Context'
 import { allBlogs, allEssays } from '@/.contentlayer/generated'
 
 export default function ReadOnBanner() {
+  const [slug, setSlug] = useState('')
   const { articleSlug } = useContext(ReadingContext) || {}
-  if (!articleSlug) return null
 
-  const article = [...allBlogs, ...allEssays].find(v => v.slug === articleSlug)
+  useEffect(()=>{
+    const t = localStorage.getItem('slug')
+    setSlug(t || '')
+  }, [])
+
+  if (!articleSlug && !slug) return null
+
+  const article = [...allBlogs, ...allEssays].find(v => v.slug === (articleSlug || slug))
   if (!article) return null
 
   return (

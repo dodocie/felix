@@ -10,7 +10,7 @@ type Props = {
 }
 
 
-export default async function Article({ params, articles }: Props) {
+export default function Article({ params, articles }: Props) {
   const blog = articles.find((item) => item.slug === params.slug)
 
   if (!blog) {

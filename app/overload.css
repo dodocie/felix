@@ -7,3 +7,10 @@
 .mantine-TextInput-input:focus{
   border-color: var(--primary-focus-color)!important;
 }
+.mantine-Timeline-itemBullet{
+  border: none!important;
+  background-color: transparent!important;
+}
+.mantine-Modal-body{
+  padding: 1rem!important;
+}
