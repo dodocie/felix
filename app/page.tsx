@@ -1,28 +1,19 @@
 import Link from 'next/link'
 import styles from './page.module.css'
 import Social from '@/components/Social'
+import Search from '@/components/Search'
+import ReadOnBanner from '@/components/ReadOn'
 
 export default function Home() {
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <Social />
         <div className={styles.avatar}>
-          <div className='flex items-center px-2.5 py-1.5 border rounded border-slate-400 text-slate-600'>
-            <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5124" width="16" height="16"><path d="M797.525333 752.266667c62.069333-72.736 97.28-165.002667 97.28-262.186667C894.816 266.528 713.621333 85.333333 490.08 85.333333 266.538667 85.333333 85.333333 266.538667 85.333333 490.069333 85.333333 713.610667 266.538667 894.826667 490.069333 894.826667a404.693333 404.693333 0 0 0 118.208-17.546667 32 32 0 0 0-18.666666-61.216 340.693333 340.693333 0 0 1-99.541334 14.762667C301.888 830.816 149.333333 678.261333 149.333333 490.069333 149.333333 301.888 301.888 149.333333 490.069333 149.333333 678.261333 149.333333 830.826667 301.888 830.826667 490.069333c0 89.28-35.381333 173.696-97.141334 237.322667a36.992 36.992 0 0 0 0.384 51.925333l149.973334 149.973334a32 32 0 0 0 45.258666-45.248L797.525333 752.266667z" fill="rgb(71 85 105)" p-id="5125"></path></svg>
-            <span className='font-medium ml-1'>搜索</span>
-          </div>
+          <Search />
         </div>
-        <dl className={styles.suggest}>
-          <dd className='text-slate-100'>
-          <h5 className='text-lg font-medium'>文章标题</h5>
-          <span className=''>tag and description</span>
-          </dd>
-          <dt className='flex items-center text-slate-100'>
-            <span className='text-sm font-medium'>继续阅读</span>
-            <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3999" width="16" height="16"><path d="M312.888889 995.555556c-17.066667 0-28.444444-5.688889-39.822222-17.066667-22.755556-22.755556-17.066667-56.888889 5.688889-79.644445l364.088888-329.955555c11.377778-11.377778 17.066667-22.755556 17.066667-34.133333 0-11.377778-5.688889-22.755556-17.066667-34.133334L273.066667 187.733333c-22.755556-22.755556-28.444444-56.888889-5.688889-79.644444 22.755556-22.755556 56.888889-28.444444 79.644444-5.688889l364.088889 312.888889c34.133333 28.444444 56.888889 73.955556 56.888889 119.466667s-17.066667 85.333333-51.2 119.466666l-364.088889 329.955556c-11.377778 5.688889-28.444444 11.377778-39.822222 11.377778z" fill="rgb(241 245 249)" p-id="4000"></path></svg>
-          </dt>
-        </dl>
+        <ReadOnBanner />
       </div>
 
       <div className={styles.center}>
@@ -51,7 +42,7 @@ export default function Home() {
           className={styles.card}
         >
           <h2>
-            ChatGPT Playground <span>-&gt;</span>
+            AI 自习室 <span>-&gt;</span>
           </h2>
           <p>还没想好怎么做~</p>
         </Link>

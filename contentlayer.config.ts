@@ -1,8 +1,8 @@
-import { defineDocumentType, makeSource } from '@contentlayer/source-files';
-import rehypePrettyCode from 'rehype-pretty-code';
-// import rehypeImgSize from 'rehype-img-size';
-import remarkGfm from 'remark-gfm';
-import remarkExternalLinks from 'remark-external-links';
+import { defineDocumentType, makeSource } from '@contentlayer/source-files'
+import rehypePrettyCode from 'rehype-pretty-code'
+// import rehypeImgSize from 'rehype-img-size'
+import remarkGfm from 'remark-gfm'
+import remarkExternalLinks from 'remark-external-links'
 
 export const Blog = defineDocumentType(() => ({
   name: 'Blog',
@@ -39,7 +39,7 @@ export const Blog = defineDocumentType(() => ({
       resolve: (blog) => blog._raw.sourceFileDir.replace('blog/', ''),
     },
   },
-}));
+}))
 
 export const Essay = defineDocumentType(() => ({
   name: 'Essay',
@@ -58,6 +58,12 @@ export const Essay = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
+    tags: {
+      type: 'list',
+      of: {
+        type: 'string',
+      },
+    },
   },
   computedFields: {
     url: {
@@ -69,7 +75,7 @@ export const Essay = defineDocumentType(() => ({
       resolve: (essay) => essay._raw.sourceFileDir.replace('essay/', ''),
     },
   },
-}));
+}))
 
 export default makeSource({
   contentDirPath: './content',
@@ -81,4 +87,4 @@ export default makeSource({
     ],
     remarkPlugins: [remarkGfm, remarkExternalLinks],
   },
-});
+})
