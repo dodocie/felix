@@ -9,20 +9,8 @@
   font-family: var(--font-mono);
 }
 
-.description a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 .suggest {
   display: none;
-}
-
-.code {
-  font-weight: 700;
-  font-family: var(--font-mono);
 }
 
 .grid {
@@ -91,9 +79,11 @@
   transform: translateZ(0);
 }
 
-.logo {
-  position: relative;
+.list {
+  max-height: 80vh;
+  overflow-y: scroll;
 }
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -145,15 +135,15 @@
     font-size: 0.8rem;
   }
 
-  .avatar,
- .suggest {
+  .search_bar,
+  .suggest {
     display: flex;
   }
   .suggest{
     position: fixed;
   }
 
-  .description .avatar {
+  .description .search_bar {
     align-items: center;
     border-radius: 0;
     border: none;
@@ -175,6 +165,18 @@
     border-radius: 10px 10px 0 0;
     box-shadow: 0 -3px 10px 0px rgba(96, 125, 139, 0.282);
     z-index: 10;
+  }
+
+  .list-page {
+    flex-direction: column;
+  }
+
+  .intro, .list {
+    width: 90%;
+    margin: 1rem auto;
+  }
+  .hide-on-mobile{
+    display: none;
   }
 }
 
@@ -199,23 +201,14 @@
     align-items: center;
     min-height: 100vh;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
+  .list-page {
+    justify-content: space-around;
+    align-items: center;
   }
-
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+  .hide-on-widescreen{
+    display: none;
   }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
+  .list{
+    width: 55vw;
   }
 }

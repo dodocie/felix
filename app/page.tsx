@@ -11,7 +11,7 @@ export default function Home() {
     <main className={styles.main}>
       <div className={styles.description}>
         <Social />
-        <div className={styles.avatar}>
+        <div className={styles.search_bar}>
           <Search />
         </div>
         <ReadOnBanner />
