@@ -16,7 +16,7 @@ export default function Icon() {
   return new ImageResponse(
     (
       // ImageResponse JSX element
-      <Paw />
+      <Paw size={32} />
     ),
     // ImageResponse options
     {

@@ -1,4 +1,4 @@
-export default function Paw() {
+export default function Paw({size=64}: {size?: number}) {
   return (
     <svg
       className="icon"
@@ -6,8 +6,8 @@ export default function Paw() {
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       p-id="1676"
-      width="64"
-      height="64"
+      width={size}
+      height={size}
     >
       <path
         d="M 114.95 629.48 s -134.39 -197.75 80.63 -271.66 l 16.32 -9.6 s 8.64 -111.35 118.07 -142.07 c 0 0 68.16 -1.92 96.95 0 c 0 0 48.96 -99.83 174.71 -66.24 c 0 0 41.28 14.4 69.11 45.12 c 0 0 191.03 -62.4 181.43 124.79 c 0 0 -37.44 -173.75 -174.71 -79.67 c 0 0 -125.75 -135.35 -214.06 -19.2 l -20.16 32.64 s -171.83 -37.44 -207.35 137.27 c 0.01 -0.01 -203.49 31.67 -120.94 248.62 Z"

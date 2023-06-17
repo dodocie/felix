@@ -1,20 +1,20 @@
-"use client"
-import { Text } from "@mantine/core"
+'use client'
+import { Text } from '@mantine/core'
 import {
   SpotlightProvider,
   spotlight,
   SpotlightActionProps,
-} from "@mantine/spotlight"
-import Link from "next/link"
-import Magnifier from "@/icons/Magnifier"
-import { fuzzySearch } from "@/utils/fuzzy"
-import Title from "@/icons/Title"
-import { allBlogs, allEssays } from "contentlayer/generated"
+} from '@mantine/spotlight'
+import Link from 'next/link'
+import Magnifier from '@/icons/Magnifier'
+import { fuzzySearch } from '@/utils/fuzzy'
+import Title from '@/icons/Title'
+import { allBlogs, allEssays } from 'contentlayer/generated'
 
 export default function Search() {
   const articles = [...allBlogs, ...allEssays].map((article) => ({
     ...article,
-    searchVal: "",
+    searchVal: '',
     onTrigger: () => ({}),
   }))
 
@@ -33,20 +33,21 @@ export default function Search() {
         actions={articles}
         searchIcon={<Magnifier />}
         actionComponent={CustomAction}
-        searchPlaceholder="Search..Blog."
-        shortcut="mod + shift + 1"
-        nothingFoundMessage="Nothing found..."
+        searchPlaceholder='Search blog'
+        shortcut='mod + k'
+        transitionProps={{ duration: 300, transition: 'slide-down' }}
+        nothingFoundMessage='Nothing found...'
         closeOnActionTrigger={true}
         limit={5}
         filter={filterSpotlight}
-        radius="md"
+        radius='md'
       >
         <div
-          className="flex w-20 items-center justify-center py-1.5 border rounded border-slate-400 text-slate-600"
+          className='flex w-20 items-center justify-center py-1.5 border rounded border-slate-400 text-slate-600'
           onClick={() => spotlight.open()}
         >
           <Magnifier />
-          <span className="font-medium ml-1">搜索</span>
+          <span className='font-medium ml-1'>搜索</span>
         </div>
       </SpotlightProvider>
     </>
@@ -56,13 +57,13 @@ export default function Search() {
 function CustomAction({ action }: SpotlightActionProps) {
   return (
     <Link href={action.url}>
-      <dl className="flex items-start mt-2">
-        <dt className="mt-1 mr-1">
+      <dl className='flex items-start mt-2'>
+        <dt className='mt-1 mr-1'>
           <Title />
         </dt>
-        <dd className="w-5/6">
-          <Text size="md">{mapTitleNode(action.searchVal, action.title)}</Text>
-          <Text size="sm" mt={4}>
+        <dd className='w-5/6'>
+          <Text size='md'>{mapTitleNode(action.searchVal, action.title)}</Text>
+          <Text size='sm' mt={4}>
             {mapContentNode(action.searchVal, action.body.raw)}
           </Text>
         </dd>
@@ -75,13 +76,14 @@ function mapTitleNode(val: string, text: string) {
   return <>{genTextNode(genNode(val, text))}</>
 }
 function mapContentNode(val: string, text: string) {
+  console.log('12', findBestMatchItem(val, text))
   return <>{genTextNode(findBestMatchItem(val, text))}</>
 }
 
 function genTextNode(node: Item[]) {
   return node.map((v) => {
     if (v.tag)
-      return <span className="font-semibold text-sky-600">{v.text}</span>
+      return <span className='font-semibold text-sky-600'>{v.text}</span>
     return v.text
   })
 }
@@ -90,7 +92,7 @@ function genNode(val: string, text: string) {
   const len = text.length
   let flag = false,
     start = 0
-  const arr = [{ text: "", tag: "" }]
+  const arr = [{ text: '', tag: '' }]
 
   for (let i = 0; i < len; i++) {
     const isMatch = val.includes(text[i])
@@ -99,7 +101,7 @@ function genNode(val: string, text: string) {
       continue
     }
     flag = isMatch
-    const tag = isMatch ? "span" : ""
+    const tag = isMatch ? 'span' : ''
     arr[++start] = { text: text[i], tag }
   }
   return arr
@@ -117,37 +119,48 @@ interface Item {
 
 function findMaxSpanWithNeighbors(arr: Item[]): Item[] {
   const result: Item[] = []
-  let maxSpanIndex = -1
-  let maxSpanLength = 0
   const len = arr.length
-  const totalStrLen = 20
+  const totalStrLen = 15
 
-  for (let i = 0; i < len; i++) {
-    if (arr[i].tag === "span" && arr[i].text.length > maxSpanLength) {
-      maxSpanIndex = i
-      maxSpanLength = arr[i].text.length
-    }
-  }
+  const { maxSpanIndex, maxSpanLength } = arr.reduce(
+    (obj, { text, tag }, i) => {
+      if (tag === 'span' && text.length > obj.maxSpanLength) {
+        obj.maxSpanIndex = i
+        obj.maxSpanLength = text.length
+      }
+      return obj
+    },
+    { maxSpanIndex: -1, maxSpanLength: 0 },
+  )
 
   if (maxSpanIndex !== -1) {
     const matchItem = arr[maxSpanIndex]
-    const restLen = totalStrLen - matchItem.text.length
+    let restLen = totalStrLen - maxSpanLength
 
-    if (restLen < 0) return [matchItem]
+    result.push(matchItem)
 
-    let targetNabor = 0
-    const nabor = { tag: "", text: "" }
-
-    if (maxSpanIndex < len - 1) {
-      targetNabor = maxSpanIndex + 1
-      nabor.text = arr[targetNabor].text.substring(0, restLen)
-      console.log('nabor', nabor)
-      return [matchItem, nabor]
+    let left = maxSpanIndex - 1,
+      right = maxSpanIndex + 1
+    while (restLen > 0 && (right < len || left >= 0)) {
+      if (right < len) {
+        const { text, tag } = arr[right]
+        const newText = text.substring(0, restLen)
+        result.push({ text: newText, tag })
+        restLen -= newText.length
+        right++
+      }
+      if (left >= 0) {
+        if(restLen <= 0) {
+          result.unshift({ text: '...', tag: '' })
+        }else{
+          const { text, tag } = arr[left]
+          const newText = text.slice(-restLen)
+          result.unshift({ text: newText, tag })
+          restLen -= newText.length
+          left--
+        }
+      }
     }
-
-    targetNabor = maxSpanIndex - 1
-    nabor.text = arr[targetNabor].text.slice(-restLen)
-    return [nabor, matchItem]
   }
 
   return result
