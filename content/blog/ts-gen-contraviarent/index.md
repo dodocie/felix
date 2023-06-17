@@ -156,9 +156,9 @@ const test: Test = (...args) => {
 
 ### 第一次翻车
 
-![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/06a665421cf847479c3422487dbf514f~tplv-k3u1fbpfcp-watermark.image?)
+![imgtserror](/assets/ts_contraviarent.webp)
 
-每个调用都报错了。一个方案是在调用的时候指定泛型参数，但这样做就很麻烦，并且毫不意外地被大佬嫌弃了。那就开始对 `Test` 进行进一步改造。
+如图所示，测试用的每个调用都报错了。一个方案是在调用的时候指定泛型参数，但这样做就很麻烦，并且毫不意外地被大佬嫌弃了。那就开始对 `Test` 进行进一步改造。
 
 这次的改造将进一步简化 `Args` 类型，使其看起来更加一目了然。它接受一个泛型参数 `T`，该参数是一个数组类型，表示函数的参数列表。根据不同的参数个数，我们进行不同的类型转换：
 

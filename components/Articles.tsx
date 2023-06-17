@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import Home from '@/icons/Home'
 import List from '@/components/List'
 import { Blog, Essay } from 'contentlayer/generated'
 import styles from '@/app/page.module.css'
@@ -8,6 +10,10 @@ export default function Articles({blogList, type}: {blogList: (Blog|Essay)[], ty
     essay: ['灵感拾遗', '😄🙂☺️']
   }
   return (
+    <>
+    <section className='fixed z-10 top-4 right-4 px-4 py-1 rounded-lg flex items-center bg-emerald-50 shadow-sm shadow-teal-800'>
+        <Link href='/'><Home /></Link>
+      </section>
     <div className={`flex h-screen ${styles['list-page']}`}>
       <section className={`${styles.intro} rounded-md px-4 py-2`}>
         <span className='text-lg font-semibold text-slate-600'>Kiera’s {`${type}`}</span>
@@ -18,6 +24,7 @@ export default function Articles({blogList, type}: {blogList: (Blog|Essay)[], ty
       </section>
       <List className={`${styles.list} rounded-md bg-teal-600/[.06] px-4 py-2`} data={blogList} />
     </div>
+    </>
   )
 }
 
