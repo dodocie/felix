@@ -10,7 +10,7 @@ export default function Articles({blogList, type}: {blogList: (Blog|Essay)[], ty
   return (
     <div className={`flex h-screen ${styles['list-page']}`}>
       <section className={`${styles.intro} rounded-md px-4 py-2`}>
-        <span className='text-lg font-semibold text-slate-600'>Kiera's {`${type}`}</span>
+        <span className='text-lg font-semibold text-slate-600'>Kiera’s {`${type}`}</span>
         <span className={styles['hide-on-widescreen']}>&nbsp;/&nbsp;</span>
         <br className={styles['hide-on-mobile']} />
         <span className='text-2xl font-black text-slate-700'>{map[type][0]}</span>

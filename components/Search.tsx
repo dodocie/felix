@@ -76,7 +76,6 @@ function mapTitleNode(val: string, text: string) {
   return <>{genTextNode(genNode(val, text))}</>
 }
 function mapContentNode(val: string, text: string) {
-  console.log('12', findBestMatchItem(val, text))
   return <>{genTextNode(findBestMatchItem(val, text))}</>
 }
 
