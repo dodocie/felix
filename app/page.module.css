@@ -178,6 +178,9 @@
   .hide-on-mobile{
     display: none;
   }
+  .article{
+    max-width: 100%;
+  }
 }
 
 /* Tablet and Smaller Desktop */
@@ -210,5 +213,12 @@
   }
   .list{
     width: 55vw;
+  }
+
+  .article{
+    width: 66vw;
+  }
+  .directory{
+    width: 26vw;
   }
 }

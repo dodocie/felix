@@ -29,8 +29,8 @@ export default function ReadOnBanner() {
       <dt className='flex items-center text-slate-100'>
         <Link href={article.url}>
           <span className='text-sm font-medium'>继续阅读</span>
-          <ArrowRight />
         </Link>
+        <ArrowRight />
       </dt>
     </dl>
   )
