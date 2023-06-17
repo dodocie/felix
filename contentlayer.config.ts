@@ -1,6 +1,6 @@
 import { defineDocumentType, makeSource } from '@contentlayer/source-files'
 import rehypePrettyCode from 'rehype-pretty-code'
-// import rehypeImgSize from 'rehype-img-size'
+import rehypeImgSize from 'rehype-img-size'
 import remarkGfm from 'remark-gfm'
 import remarkExternalLinks from 'remark-external-links'
 
@@ -83,7 +83,8 @@ export default makeSource({
   mdx: {
     rehypePlugins: [
       [rehypePrettyCode, { theme: 'github-dark' }],
-      // [rehypeImgSize, { dir: 'public' }],
+      //@ts-ignore
+      [rehypeImgSize, { dir: 'public' }],
     ],
     remarkPlugins: [remarkGfm, remarkExternalLinks],
   },

@@ -19,11 +19,11 @@ export default function Article({ params, articles }: Props) {
 
   return (
     <>
-      <div className="flex flex-col items-center px-2 pt-12 pb-8">
+      <div className="flex flex-col items-center px-4 pt-12 pb-8">
         <h1 className="font-medium text-2xl">{blog.title}</h1>
         <p className="mt-2 text-gray-500 text-sm">{blog.date}</p>
       </div>
-      <article className="px-2 prose max-w-none">
+      <article className="px-4 prose max-w-none">
         <MDX code={blog.body.code} />
       </article>
       <Footer slug={blog.slug} />
