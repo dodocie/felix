@@ -205,14 +205,16 @@
     min-height: 100vh;
   }
   .list-page {
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    width: 80vw;
+    margin: auto;
   }
   .hide-on-widescreen{
     display: none;
   }
   .list{
-    width: 55vw;
+    width: 45vw;
   }
 
   .article{
