@@ -26,7 +26,7 @@ export default function Articles({
           <Home />
         </Link>
       </section>
-      <div className={`flex h-screen pb-24 ${styles['list-page']}`}>
+      <div className={`pb-16 ${styles['list-page']}`}>
         <section className={`${styles.intro} rounded-md px-4 py-2 relative`}>
           <span className='text-lg font-semibold text-slate-600'>
             Kiera’s {`${type}`}&nbsp;/&nbsp;
@@ -35,7 +35,10 @@ export default function Articles({
             {map[type][0]}
           </span>
           <p className='text-md text-slate-400'>{map[type][1]}</p>
-          <div className='absolute' style={{bottom: '-300px', left: '-100px'}}>
+          <div
+            className='absolute'
+            style={{ bottom: '-300px', left: '-100px' }}
+          >
             <div className={`relative -z-10 ${styles['hide-on-mobile']}`}>
               <Image
                 width='300'
@@ -56,9 +59,7 @@ export default function Articles({
           className={`${styles.list} rounded-md bg-teal-600/[.06] px-4 py-2`}
           data={blogList}
         />
-        <div>
         <ReadOn />
-        </div>
       </div>
     </>
   )

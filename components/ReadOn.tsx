@@ -24,7 +24,7 @@ export default function ReadOnBanner() {
     <dl className={styles.suggest}>
       <dd className='w-2/3 text-slate-100'>
         <h5 className='truncate text-lg font-medium'>{article.title}</h5>
-        <p className='truncate'>{article.description}</p>
+        <p className='truncate text-base font-medium'>{article.description}</p>
       </dd>
       <dt className='flex items-center text-slate-100'>
         <Link href={article.url}>

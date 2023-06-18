@@ -6,7 +6,6 @@
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
-  font-family: var(--font-mono);
 }
 
 .suggest {
@@ -112,6 +111,8 @@
     grid-template-columns: 1fr;
     max-width: 90vw;
     text-align: center;
+    margin: auto;
+    padding-bottom: 4rem;
   }
 
   .card {
@@ -160,7 +161,8 @@
     align-items: center;
     justify-content: space-between;
     inset: auto 0 0;
-    padding: 0.4rem 1rem;
+    padding: .4rem 1rem;
+    line-height: 1.5;
     background: var(--primary-focus-color);
     border-radius: 10px 10px 0 0;
     box-shadow: 0 -3px 10px 0px rgba(96, 125, 139, 0.282);
