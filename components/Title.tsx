@@ -2,7 +2,7 @@
 import { useContext, useEffect, useRef } from 'react'
 import { ReadingContext } from '@/hooks/Context'
 import { Blog, Essay } from 'contentlayer/generated'
-import { useIntersectionObserver } from '@/hooks/IntersectionObserver'
+import { observeIntersection } from '@/utils/intersection'
 
 export default function Title({ blog }: { blog: Blog | Essay }) {
   const titleRef = useRef<HTMLDivElement>(null)
@@ -13,7 +13,7 @@ export default function Title({ blog }: { blog: Blog | Essay }) {
   }
 
   useEffect(() => {
-    useIntersectionObserver({ref: titleRef, update})
+    observeIntersection({ref: titleRef, update})
   }, [])
 
   return (

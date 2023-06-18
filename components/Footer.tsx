@@ -2,7 +2,7 @@
 import { useContext, useEffect, useRef } from 'react'
 import { Divider } from '@mantine/core'
 import { ReadingContext } from '@/hooks/Context'
-import { useIntersectionObserver } from '@/hooks/IntersectionObserver'
+import { observeIntersection } from '@/utils/intersection'
 
 export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null)
@@ -13,7 +13,7 @@ export default function Footer() {
   }
 
   useEffect(() => {
-    useIntersectionObserver({ref: footerRef, update})
+    observeIntersection({ref: footerRef, update})
   }, [])
 
   return (

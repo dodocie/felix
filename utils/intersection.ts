@@ -5,13 +5,14 @@ interface Props {
   update: () => void
 }
 
-export function useIntersectionObserver({ref, update}: Props){
+export function observeIntersection({ref, update}: Props){
   const options = {
     root: null,
     rootMargin: '0px',
     threshold: 0.5,
   }
 
+  
   function handleIntersect(entries: IntersectionObserverEntry[]) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
