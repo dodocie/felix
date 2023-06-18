@@ -3,8 +3,6 @@ import Image from 'next/image'
 import Home from '@/icons/Home'
 import List from '@/components/List'
 import ReadOn from '@/components/ReadOn'
-import WoolBall from '@/components/WoolBall'
-import IdeaBubble from '@/icons/IdeaBubble'
 import { Blog, Essay } from 'contentlayer/generated'
 import styles from '@/app/page.module.css'
 
@@ -42,16 +40,10 @@ export default function Articles({
             <div className={`relative -z-10 ${styles['hide-on-mobile']}`}>
               <Image
                 width='300'
-                height='276'
-                src='/assets/cat_work.png'
+                height='310'
+                src='/assets/cat2.png'
                 alt='cat work'
               ></Image>
-              <div className='absolute -top-7 left-1/2'>
-                <IdeaBubble />
-              </div>
-              <div className='absolute bottom-7 -right-1'>
-                <WoolBall />
-              </div>
             </div>
           </div>
         </section>

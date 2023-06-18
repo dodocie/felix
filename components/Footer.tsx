@@ -43,7 +43,7 @@ export default function Footer({slug}:  {slug: string}) {
   }, [])
 
   return (
-      <Divider ref={footerRef} my="xs" label="Label in the center" labelPosition="center" />
+      <Divider ref={footerRef} my="xs" label="到底啦" labelPosition="center" />
   )
 }
 
