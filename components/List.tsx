@@ -12,7 +12,7 @@ const List: FC<ListProps> = ({ data, className }) => {
     <ul className={className}>
       {data.map((item) => (
         <li
-          key={item.slug}
+          key={item.date}
           className="py-2 rounded-md transition-colors hover:bg-teal-50"
         >
           <Link href={item.url} className="flex items-center justify-between space-x-2">
