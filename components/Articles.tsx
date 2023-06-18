@@ -41,8 +41,8 @@ export default function Articles({
               <Image
                 width='300'
                 height='310'
-                src='/assets/cat2.png'
-                alt='cat work'
+                src='/assets/cat_rush.png'
+                alt='cat on rush'
               ></Image>
             </div>
           </div>
