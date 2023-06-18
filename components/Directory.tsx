@@ -6,12 +6,24 @@ import styles from '@/app/page.module.css'
 import Folder from '@/icons/Folder'
 import Home from '@/icons/Home'
 import Content from '@/icons/Content'
+import Paw from '@/icons/PinkPaw'
 import style from '@/app/page.module.css'
+import { useEffect } from 'react'
 
 export default function Directory({ html }: { html: string }) {
   const [opened, { open, close }] = useDisclosure(false)
 
   const directory = generateTree(html)
+
+  useEffect(() => {
+    const handler = (event: Event) => {
+      if(event.target?.nodeName === 'A'){
+        close()
+      }
+    }
+    window.addEventListener('click', handler)
+    return () => window.removeEventListener('click', handler)
+  }, [])
 
   return (
     <>
@@ -56,7 +68,7 @@ const sizeMap = ['xl', 'md', 'sm']
 function genNestNode(nodes: MatchNode[], isPadding?: boolean) {
   if (!nodes?.length) return null
   return (
-    <List withPadding={isPadding} size={sizeMap[nodes[0].level - 1]}>
+    <List withPadding={isPadding} size={sizeMap[nodes[0].level - 1]} icon={<Paw size={14} />}>
       {nodes.map((node) => {
         return (
           <List.Item key={`d${node.value}_${node.level}`}>
@@ -76,7 +88,7 @@ function genNestNode(nodes: MatchNode[], isPadding?: boolean) {
 }
 
 function findMatches(inputString: string) {
-  const regex = /#[^\n]+/g
+  const regex = /##[^\n]+/g
   const matches = inputString.match(regex)
   return matches || []
 }

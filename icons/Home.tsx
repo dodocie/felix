@@ -10,7 +10,7 @@ export default function Home({ size = 24 }: { size?: number }) {
     >
       <path
         d='M667.5 612.5m-281.5 0a281.5 281.5 0 1 0 563 0 281.5 281.5 0 1 0-563 0Z'
-        fill='#C1E6DE'
+        fill='#FFD84A'
         p-id='9585'
       ></path>
       <path
