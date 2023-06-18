@@ -183,6 +183,16 @@
   .article{
     max-width: 100%;
   }
+
+  .cat{
+    left: 0;
+  }
+}
+
+.cat{
+  filter: drop-shadow(0px 2px 3px #8c8972);
+  bottom: -300px;
+  opacity: .1;
 }
 
 /* Tablet and Smaller Desktop */
@@ -224,5 +234,9 @@
   }
   .directory{
     width: 26vw;
+  }
+
+  .cat{
+    left: -50px;
   }
 }

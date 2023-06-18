@@ -34,17 +34,14 @@ export default function Articles({
           </span>
           <p className='text-md text-slate-400'>{map[type][1]}</p>
           <div
-            className='absolute'
-            style={{ bottom: '-300px', left: '-100px' }}
+            className={`${styles.cat} absolute -z-10 `}
           >
-            <div className={`relative -z-10 ${styles['hide-on-mobile']}`}>
-              <Image
+            <Image
                 width='300'
                 height='310'
                 src='/assets/cat.png'
                 alt='cat on rush'
               ></Image>
-            </div>
           </div>
         </section>
         <List
