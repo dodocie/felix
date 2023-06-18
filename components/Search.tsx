@@ -55,6 +55,7 @@ export default function Search() {
 }
 
 function CustomAction({ action }: SpotlightActionProps) {
+  const text = removeMDXCode(action.body.raw)
   return (
     <Link href={action.url}>
       <dl className='flex items-start mt-2'>
@@ -64,7 +65,7 @@ function CustomAction({ action }: SpotlightActionProps) {
         <dd className='w-5/6'>
           <Text size='md'>{mapTitleNode(action.searchVal, action.title)}</Text>
           <Text size='sm' mt={4}>
-            {mapContentNode(action.searchVal, action.body.raw)}
+            {mapContentNode(action.searchVal, text)}
           </Text>
         </dd>
       </dl>
@@ -119,7 +120,7 @@ interface Item {
 function findMaxSpanWithNeighbors(arr: Item[]): Item[] {
   const result: Item[] = []
   const len = arr.length
-  const totalStrLen = 15
+  const totalStrLen = 30
 
   const { maxSpanIndex, maxSpanLength } = arr.reduce(
     (obj, { text, tag }, i) => {
@@ -149,9 +150,9 @@ function findMaxSpanWithNeighbors(arr: Item[]): Item[] {
         right++
       }
       if (left >= 0) {
-        if(restLen <= 0) {
+        if (restLen <= 0) {
           result.unshift({ text: '...', tag: '' })
-        }else{
+        } else {
           const { text, tag } = arr[left]
           const newText = text.slice(-restLen)
           result.unshift({ text: newText, tag })
@@ -163,4 +164,10 @@ function findMaxSpanWithNeighbors(arr: Item[]): Item[] {
   }
 
   return result
+}
+
+function removeMDXCode(input: string): string {
+  const regex = /(```[\s\S]+?```|\[[^\]]+?\]\)|#+[^#\s]+)[^`#\[\]]*/g
+  const strippedString = input.replace(regex, '')
+  return strippedString
 }
