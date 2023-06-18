@@ -26,7 +26,7 @@ export default function Articles({
           <Home />
         </Link>
       </section>
-      <div className={`pb-16 ${styles['list-page']}`}>
+      <div className={`flex h-screen pb-16 ${styles['list-page']}`}>
         <section className={`${styles.intro} rounded-md px-4 py-2 relative`}>
           <span className='text-lg font-semibold text-slate-600'>
             Kiera’s {`${type}`}&nbsp;/&nbsp;
