@@ -1,12 +1,12 @@
-export default function Content() {
+export default function Content({size=32}: {size?: number}) {
   return (
     <svg
       viewBox='0 0 1024 1024'
       version='1.1'
       xmlns='http://www.w3.org/2000/svg'
       p-id='25349'
-      width='32'
-      height='32'
+      width={size}
+      height={size}
     >
       <path
         d='M655.36 678.4m-288 0a288 288 0 1 0 576 0 288 288 0 1 0-576 0Z'

@@ -8,7 +8,7 @@ import {
 import Link from 'next/link'
 import Magnifier from '@/icons/Magnifier'
 import { fuzzySearch } from '@/utils/fuzzy'
-import Title from '@/icons/Title'
+import Content from '@/icons/Content'
 import { allBlogs, allEssays } from 'contentlayer/generated'
 
 export default function Search() {
@@ -59,7 +59,7 @@ function CustomAction({ action }: SpotlightActionProps) {
     <Link href={action.url}>
       <dl className='flex items-start mt-2'>
         <dt className='mt-1 mr-1'>
-          <Title />
+          <Content size={16} />
         </dt>
         <dd className='w-5/6'>
           <Text size='md'>{mapTitleNode(action.searchVal, action.title)}</Text>
