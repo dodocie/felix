@@ -1,8 +1,6 @@
 import Fuse from 'fuse.js'
 import { Blog, Essay, allBlogs, allEssays } from 'contentlayer/generated'
 
-const articles = [...allBlogs, ...allEssays]
-
 const options = {
   keys: ['title', 'tags', 'description', 'body.raw']
 }

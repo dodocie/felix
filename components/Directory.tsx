@@ -23,7 +23,7 @@ export default function Directory({ html }: { html: string }) {
     }
     window.addEventListener('click', handler)
     return () => window.removeEventListener('click', handler)
-  }, [])
+  }, [close])
 
   return (
     <>

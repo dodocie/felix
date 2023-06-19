@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 import './globals.css'
 import './overload.css'
 import ReadingProvider from '@/components/Provider'
+import SwitchMode from '@/components/Mode'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,7 +15,8 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="zh-CN">
-      <body className={inter.className}>
+      <body className='antialiased text-slate-500 dark:text-slate-400 bg-teal-50 dark:bg-slate-900'>
+        <SwitchMode />
         <ReadingProvider>{children}</ReadingProvider>
       </body>
     </html>

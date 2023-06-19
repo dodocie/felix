@@ -19,12 +19,12 @@ export default function Articles({
   }
   return (
     <>
-      <section className='fixed z-10 top-4 right-4 px-4 py-1 rounded-lg flex items-center bg-emerald-50 shadow-sm shadow-teal-800'>
+      <section className='fixed z-10 top-4 left-4 px-4 py-1 rounded-lg flex items-center bg-emerald-50 shadow-sm shadow-teal-800'>
         <Link href='/'>
           <Home />
         </Link>
       </section>
-      <div className={`flex h-screen pb-16 ${styles['list-page']}`}>
+      <div className={`flex h-screen pt-8 pb-16 ${styles['list-page']}`}>
         <section className={`${styles.intro} rounded-md px-4 py-2 relative`}>
           <span className='text-lg font-semibold text-slate-600'>
             Kiera’s {`${type}`}&nbsp;/&nbsp;

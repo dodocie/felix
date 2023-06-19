@@ -17,3 +17,14 @@
 .mantine-List-itemIcon{
   padding-top: 5px;
 }
+.mantine-Switch-track{
+  background-color: #376668!important;
+  border-color: transparent!important;
+}
+input:checked+.mantine-Switch-track{
+  background-color: #9ad3b8!important;
+  border-color: transparent!important;
+}
+.mantine-SegmentedControl-root{
+  background-color: transparent!important;
+}
