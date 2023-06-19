@@ -16,8 +16,8 @@ const List: FC<ListProps> = ({ data, className }) => {
           className="py-2 rounded-md transition-colors hover:bg-teal-50"
         >
           <Link href={item.url} className="flex items-center justify-between space-x-2">
-            <span className="flex-grow text-gray-900 line-clamp-1">{item.title}</span>
-            <span className="flex-shrink-0 text-sm text-gray-400">
+            <span className="flex-grow text-slate-800 dark:text-sky-300 line-clamp-1">{item.title}</span>
+            <span className="flex-shrink-0 text-sm text-slate-500">
               {format(new Date(item.date), 'yyyy-MM-dd')}
             </span>
           </Link>

@@ -19,7 +19,7 @@ export default function Articles({
   }
   return (
     <>
-      <section className='fixed z-10 top-4 left-4 px-4 py-1 rounded-lg flex items-center bg-emerald-50 shadow-sm shadow-teal-800'>
+      <section className='fixed z-10 top-4 left-4 px-4 py-1 rounded-lg flex items-center bg-emerald-50 shadow-sm shadow-teal-800 dark:bg-slate-500 dark:shadow-slate-300'>
         <Link href='/'>
           <Home />
         </Link>
@@ -34,7 +34,7 @@ export default function Articles({
           </span>
           <p className='text-md text-slate-400'>{map[type][1]}</p>
           <div
-            className={`${styles.cat} absolute -z-10 `}
+            className={`${styles.cat} absolute -z-10 dark:invert`}
           >
             <Image
                 width='300'
@@ -45,7 +45,7 @@ export default function Articles({
           </div>
         </section>
         <List
-          className={`${styles.list} rounded-md bg-teal-600/[.06] px-4 py-2`}
+          className={`${styles.list} rounded-md px-4 py-2 bg-teal-600/[.06] dark:bg-slate-800/[.6]`}
           data={blogList}
         />
         <ReadOn />

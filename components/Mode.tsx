@@ -19,9 +19,7 @@ export default function SwitchMode() {
 
   const changeModeHandler = (e: MediaQueryListEvent) => {
     //系统变成模式时候，如果用户手动选择了，且值不等于system，就不操作。
-    console.log('-isChanged-', isChanged.current)
     if(isChanged.current === 'light' || isChanged.current === 'dark') return
-    console.log('e', e)
     changeMode(e.matches)
   }
   useEffect(() => {
@@ -38,7 +36,6 @@ export default function SwitchMode() {
   }, [])
 
   const onChangeMode = (val: string) => {
-    console.log('val', val)
     setMode(val)
     isChanged.current = val
     const isDark = val === 'dark' || val === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -46,7 +43,7 @@ export default function SwitchMode() {
   }
 
   return (
-    <div className='fixed top-2 right-2'>
+    <div className='fixed top-3 right-2'>
       <SegmentedControl
         size='xs'
         value={colorMode}
