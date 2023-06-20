@@ -20,7 +20,7 @@ export default function Article({ params, articles }: Props) {
   }
 
   return (
-    <div className={`flex justify-between w-11/12 m-auto`}>
+    <div className={`flex justify-between relative w-11/12 m-auto`}>
       <section className={style.article}>
         <Title blog={blog} />
         <article className='px-4 prose max-w-none'>

@@ -66,3 +66,7 @@ input:checked+.mantine-Switch-track{
 .prose :where(code):not(:where([class~="not-prose"] *))::after{
   content: '';
 }
+
+.dark .mantine-Drawer-content{
+  background-color: #334155;
+}
