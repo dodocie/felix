@@ -33,3 +33,36 @@ input:checked+.mantine-Switch-track{
 .mantine-SegmentedControl-indicator{
   background-color: rgba(255, 255, 255, 0.3);
 }
+
+.dark .main-page-center::after{
+  background: radial-gradient(rgba(1, 149, 255, 0.4), rgba(1, 65, 255, 0));
+}
+.dark .main-page-center::before{
+  background: linear-gradient(
+    to bottom right,
+    rgba(1, 65, 255, 0),
+    rgba(1, 65, 255, 0),
+    rgba(1, 65, 255, 0.3)
+  );
+}
+.prose{
+  color: inherit!important;
+}
+.dark .prose :where(h3):not(:where([class~="not-prose"] *)){
+  color: #94a3b8;
+}
+.dark .prose :where(a):not(:where([class~="not-prose"] *)){
+  color: #79a6e4;
+}
+.prose :where(code):not(:where([class~="not-prose"] *)){
+  color: #4d7c0f;
+}
+.dark .prose :where(code):not(:where([class~="not-prose"] *)){
+  color: #84cc16;
+}
+.prose :where(code):not(:where([class~="not-prose"] *))::before{
+  content: '';
+}
+.prose :where(code):not(:where([class~="not-prose"] *))::after{
+  content: '';
+}

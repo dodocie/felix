@@ -17,7 +17,7 @@ export default function Title({ blog }: { blog: Blog | Essay }) {
   }, [])
 
   return (
-    <div ref={titleRef} className='flex flex-col items-center text-slate-700 px-4 pt-16 pb-8'>
+    <div ref={titleRef} className='flex flex-col items-center text-slate-700 dark:text-slate-400 px-6 pt-16 pb-8'>
       <h1 className='font-medium text-2xl'>{blog.title}</h1>
       <h2 className='font-medium text-lg'>{blog.subtitle}</h2>
       <p className='mt-2 text-gray-500 text-sm'>{blog.date}</p>

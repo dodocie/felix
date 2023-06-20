@@ -27,7 +27,7 @@ export default function Directory({ html }: { html: string }) {
 
   return (
     <>
-      <section className='fixed z-10 top-4 right-4 px-4 py-1 rounded-lg flex items-center bg-emerald-50 shadow-sm shadow-teal-800'>
+      <section className='fixed z-10 top-4 left-4 px-4 py-1 rounded-lg flex items-center bg-emerald-50 shadow-sm shadow-teal-800 dark:bg-slate-500 dark:shadow-slate-300'>
         <Link href='/'><Home /></Link>
         <div className={`${styles['hide-on-widescreen']} ml-4`} onClick={open}>
           <Folder />

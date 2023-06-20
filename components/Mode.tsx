@@ -1,25 +1,36 @@
 'use client'
 
-import { SegmentedControl } from '@mantine/core'
+import { Transition, SegmentedControl, Button } from '@mantine/core'
+import { useClickOutside } from '@mantine/hooks'
 import { useEffect, useRef, useState } from 'react'
+import MenuMore from '@/icons/MenuMore'
 
 const changeMode = (isDark: boolean) => {
   console.log('isDark', isDark)
 
-  if(isDark){
+  if (isDark) {
     document.documentElement.classList.add('dark')
-  }else{
+  } else {
     document.documentElement.classList.remove('dark')
   }
 }
+const scaleY = {
+  in: { opacity: 1, transform: 'scaleY(1)' },
+  out: { opacity: 0, transform: 'scaleY(0)' },
+  common: { transformOrigin: 'top' },
+  transitionProperty: 'transform, opacity',
+}
 
 export default function SwitchMode() {
+  const [opened, setOpened] = useState(false)
+  const clickOutsideRef = useClickOutside(() => setOpened(false))
+
   const [colorMode, setMode] = useState('light')
   const isChanged = useRef('')
 
   const changeModeHandler = (e: MediaQueryListEvent) => {
     //系统变成模式时候，如果用户手动选择了，且值不等于system，就不操作。
-    if(isChanged.current === 'light' || isChanged.current === 'dark') return
+    if (isChanged.current === 'light' || isChanged.current === 'dark') return
     changeMode(e.matches)
   }
   useEffect(() => {
@@ -31,39 +42,57 @@ export default function SwitchMode() {
       .addEventListener('change', changeModeHandler)
 
     return () => {
-      window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', changeModeHandler)
-    }  
+      window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .removeEventListener('change', changeModeHandler)
+    }
   }, [])
 
   const onChangeMode = (val: string) => {
     setMode(val)
     isChanged.current = val
-    const isDark = val === 'dark' || val === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isDark =
+      val === 'dark' ||
+      (val === 'auto' &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
     changeMode(isDark)
   }
 
   return (
-    <div className='fixed top-3 right-2'>
-      <SegmentedControl
-        size='xs'
-        value={colorMode}
-        onChange={onChangeMode}
-        radius={8}
-        data={[
-          {
-            value: 'light',
-            label: <IconSun />,
-          },
-          {
-            value: 'dark',
-            label: <IconMoonStars />,
-          },
-          {
-            value: 'auto',
-            label: <IconSystem />,
-          },
-        ]}
-      />
+    <div className='fixed top-3 right-0 z-10'>
+      <section className='relative w-full'>
+        <Button variant='subtle' onClick={() => setOpened(true)}><MenuMore /></Button>
+        <Transition
+          mounted={opened}
+          transition={scaleY}
+          duration={200}
+          timingFunction='ease'>
+          {() => (
+            <SegmentedControl
+              ref={clickOutsideRef}
+              className='absolute top-0 right-2'
+              size='xs'
+              value={colorMode}
+              onChange={onChangeMode}
+              radius={8}
+              data={[
+                {
+                  value: 'light',
+                  label: <IconSun />,
+                },
+                {
+                  value: 'dark',
+                  label: <IconMoonStars />,
+                },
+                {
+                  value: 'auto',
+                  label: <IconSystem />,
+                },
+              ]}
+            />
+          )}
+        </Transition>
+      </section>
     </div>
   )
 }

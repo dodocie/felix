@@ -43,7 +43,7 @@ export default function Search() {
         radius='md'
       >
         <div
-          className='flex w-20 items-center justify-center py-1.5 border rounded border-slate-400 text-slate-600'
+          className='flex w-20 items-center justify-between px-3 py-1.5 border rounded border-slate-400 text-slate-600 dark:text-slate-400'
           onClick={() => spotlight.open()}
         >
           <Magnifier />
