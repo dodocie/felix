@@ -53,7 +53,7 @@ export default function Directory({ html }: { html: string }) {
         </div>
         <div className='pl-3 text-slate-600 dark:text-slate-300'>{genNestNode(directory)}</div>
       </Drawer>
-      <div className={`${style['hide-on-mobile']}`} style={{height: '600px', overflow: 'hidden'}}>
+      <div className={`${style['hide-on-mobile']}`}>
         <div className='mt-10 sticky top-4 text-slate-600 dark:text-slate-300'>
           <div className='flex items-center mb-4'>
             <Content />
