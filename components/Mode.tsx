@@ -16,6 +16,7 @@ const changeMode = (isDark: boolean) => {
   const doc = document
 
   const colorIndex = isDark ? 1 : 0
+  console.log('color index', colorIndex, isDark)
   Object.entries(modeCssVarientMap)
     .forEach(([key, colors])=>{
       doc.documentElement.style.setProperty(key, colors[colorIndex])

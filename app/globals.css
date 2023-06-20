@@ -27,6 +27,11 @@
 
   --primary-focus-color: #607D8B;
 
+  --tw-prose-body: #374151;
+  --tw-prose-headings: #111827;
+  --tw-prose-links: #111827;
+  --tw-prose-quotes: #111827;
+  --tw-prose-code: #4d7c0f;
 }
 
 @media (prefers-color-scheme: dark) {

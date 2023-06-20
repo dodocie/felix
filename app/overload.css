@@ -65,7 +65,11 @@ input:checked+.mantine-Switch-track{
 }
 
 .prose {
-  --tw-prose-code: #4d7c0f!important;
+  --tw-prose-code: inherit!important;
+  --tw-prose-body: inherit!important;
+  --tw-prose-headings: inherit!important;
+  --tw-prose-links: inherit!important;
+  --tw-prose-quotes: inherit!important;
 }
 
 @media (prefers-color-scheme: dark){
