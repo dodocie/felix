@@ -5,13 +5,28 @@ import { useClickOutside } from '@mantine/hooks'
 import { useEffect, useRef, useState } from 'react'
 import MenuMore from '@/icons/MenuMore'
 
+const modeCssVarientMap = {
+  '--tw-prose-headings': ['#111827', '#94a3b8'],
+  '--tw-prose-code': ['#4d7c0f', '#84cc16'],
+  '--tw-prose-links': ['#111827', '#79a6e4'],
+  '--tw-prose-quotes': ['#111827', '#747483'],
+}
+
 const changeMode = (isDark: boolean) => {
-  console.log('isDark', isDark)
+  const doc = document
+
+  const colorIndex = isDark ? 1 : 0
+  Object.entries(modeCssVarientMap)
+    .forEach(([key, colors])=>{
+      doc.documentElement.style.setProperty(key, colors[colorIndex])
+      doc.querySelector('.prose')?.style.setProperty(key, colors[colorIndex])
+    })
 
   if (isDark) {
-    document.documentElement.classList.add('dark')
+    doc.documentElement.classList.add('dark')
+
   } else {
-    document.documentElement.classList.remove('dark')
+    doc.documentElement.classList.remove('dark')
   }
 }
 const scaleY = {

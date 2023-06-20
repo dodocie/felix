@@ -13,7 +13,7 @@ const List: FC<ListProps> = ({ data, className }) => {
       {data.map((item) => (
         <li
           key={item.date}
-          className="py-2 rounded-md transition-colors hover:bg-teal-50"
+          className="py-2 rounded-md transition-colors hover:bg-teal-50 dark:hover:bg-teal-600"
         >
           <Link href={item.url} className="flex items-center justify-between space-x-2">
             <span className="flex-grow text-slate-800 dark:text-sky-300 line-clamp-1">{item.title}</span>
