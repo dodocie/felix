@@ -70,3 +70,10 @@ input:checked+.mantine-Switch-track{
 .dark .mantine-Drawer-content{
   background-color: #334155;
 }
+.dark .prose :where(blockquote):not(:where([class~="not-prose"] *)){
+  color: #747483;
+}
+.prose :where(blockquote):not(:where([class~="not-prose"] *)){
+  font-size: small!important;
+  font-weight: normal!important;
+}

@@ -2,7 +2,7 @@ import { CSSProperties } from 'react'
 
 export default function ToTop({style, scrollHandler}: {style: CSSProperties, scrollHandler: ({ x, y }: {x?: number, y?:number}) => void}) {
   return (
-    <div style={style} onClick={() => scrollHandler({ y: 0 })} className='px-4 py-1 rounded-full bg-emerald-50 shadow-sm shadow-teal-800'>
+    <div style={style} onClick={() => scrollHandler({ y: 0 })} className='px-4 py-1 rounded-full bg-emerald-50 shadow-sm shadow-teal-800 dark:bg-slate-500 dark:shadow-slate-300'>
       <svg
         viewBox='0 0 1040 1024'
         version='1.1'
