@@ -43,7 +43,7 @@ input:checked+.mantine-Switch-track{
   color: inherit!important;
 }
 
-.dark .main-page-center::after{
+/* .dark .main-page-center::after{
   background: radial-gradient(rgba(1, 149, 255, 0.4), rgba(1, 65, 255, 0));
 }
 .dark .main-page-center::before{
@@ -53,7 +53,7 @@ input:checked+.mantine-Switch-track{
     rgba(1, 65, 255, 0),
     rgba(1, 65, 255, 0.3)
   );
-}
+} */
 .prose{
   color: inherit!important;
 }

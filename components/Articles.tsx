@@ -48,7 +48,7 @@ export default function Articles({
           className={`${styles.list} rounded-md px-4 py-2 bg-teal-600/[.06] dark:bg-slate-800/[.6]`}
           data={blogList}
         />
-        <ReadOn />
+        <div className='fixed bottom-0 left-0 z-10 w-full'><ReadOn /></div>
       </div>
     </>
   )

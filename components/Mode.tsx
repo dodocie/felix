@@ -10,6 +10,23 @@ const modeCssVarientMap = {
   '--tw-prose-code': ['#4d7c0f', '#84cc16'],
   '--tw-prose-links': ['#111827', '#79a6e4'],
   '--tw-prose-quotes': ['#111827', '#747483'],
+  '--primary-glow': [`conic-gradient(
+    from 180deg at 50% 50%,
+    #eeea1133 0deg,
+    #fbff0833 55deg,
+    #f3f02823 120deg,
+    #fbff0033 160deg,
+    transparent 360deg
+  )`, 'radial-gradient(rgba(1, 149, 255, 0.4), rgba(1, 65, 255, 0))'],
+  '--secondary-glow': [`radial-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  )`, `linear-gradient(
+    to bottom right,
+    rgba(1, 65, 255, 0),
+    rgba(1, 65, 255, 0),
+    rgba(1, 65, 255, 0.3)
+  )`],
 }
 
 const changeMode = (isDark: boolean) => {
