@@ -42,7 +42,7 @@ export default function SwitchMode() {
   const clickOutsideRef = useClickOutside(() => setOpened(false))
 
   const [colorMode, setMode] = useState('light')
-  const isChanged = useRef('')
+  const isChanged = useRef(colorMode)
 
   const changeModeHandler = (e: MediaQueryListEvent) => {
     //系统变成模式时候，如果用户手动选择了，且值不等于system，就不操作。
@@ -66,7 +66,7 @@ export default function SwitchMode() {
 
   const onChangeMode = (val: string) => {
     setMode(val)
-    isChanged.current = val
+    // isChanged.current = val
     const isDark =
       val === 'dark' ||
       (val === 'auto' &&
