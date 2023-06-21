@@ -75,18 +75,19 @@ export default function SwitchMode() {
   }
 
   return (
-    <div className='fixed top-3 right-0 z-10'>
-      <section className='relative w-full'>
-        <Button variant='subtle' onClick={() => setOpened(true)}><MenuMore /></Button>
+    <div className='fixed top-3 right-2 z-10 flex items-center text-slate-800 dark:text-slate-500'>
+      <div className='relative w-full'>
+        <Button size='xs' variant='subtle' onClick={() => setOpened(!opened)}><MenuMore /></Button>
         <Transition
           mounted={opened}
-          transition={scaleY}
+          transition='slide-left'
           duration={200}
-          timingFunction='ease'>
-          {() => (
+          timingFunction='linear'>
+          {styles => (
             <SegmentedControl
               ref={clickOutsideRef}
               className='absolute top-0 right-2'
+              style={styles}
               size='xs'
               value={colorMode}
               onChange={onChangeMode}
@@ -108,7 +109,7 @@ export default function SwitchMode() {
             />
           )}
         </Transition>
-      </section>
+      </div>
     </div>
   )
 }

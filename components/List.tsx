@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import Link from 'next/link'
 import { format } from 'date-fns'
 
@@ -7,7 +6,7 @@ export interface ListProps {
   className?: string
 }
 
-const List: FC<ListProps> = ({ data, className }) => {
+const List = ({ data, className }: ListProps) => {
   return (
     <ul className={className}>
       {data.map((item) => (

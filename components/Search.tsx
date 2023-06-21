@@ -58,7 +58,7 @@ function CustomAction({ action }: SpotlightActionProps) {
   const text = removeMDXCode(action.body.raw)
   return (
     <Link href={action.url}>
-      <dl className='flex items-start mt-2'>
+      <dl className='flex items-start mt-2 text-slate-800 dark:text-slate-400'>
         <dt className='mt-1 mr-1'>
           <Content size={16} />
         </dt>
