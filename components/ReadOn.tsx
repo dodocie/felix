@@ -22,11 +22,11 @@ export default function ReadOnBanner() {
 
   return (
     <dl className={`${styles['hide-on-widescreen']} flex items-center justify-between px-4 py-2 rounded-t-lg bg-lime-900/10 dark:bg-slate-800/[.6]`}>
-      <dd className='w-2/3 text-slate-500 dark: text-slate-300'>
+      <dd className='w-2/3 text-slate-500 dark:text-slate-300'>
         <h5 className='truncate text-lg font-medium'>{article.title}</h5>
         <p className='truncate text-sm'>{article.description}</p>
       </dd>
-      <dt className='flex items-center text-slate-500 dark: text-slate-300'>
+      <dt className='flex items-center text-slate-500 dark:text-slate-300'>
         <Link href={article.url}>
           <span className='text-base font-medium'>继续阅读</span>
         </Link>
