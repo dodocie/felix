@@ -8,7 +8,7 @@ import Paw from '@/icons/Paw'
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={`fixed top-3 right-10 ${styles['hide-on-mobile']}`}><Social /></div>        
+      <div className='fixed top-3 right-10'><Social /></div>        
       <div className='mt-4 ml-6'><Search /></div>
 
       <div className={`${styles.center} relative flex items-center justify-center`}>
