@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="zh-CN">
-      <body className='antialiased text-slate-700 dark:text-slate-400 bg-teal-50/50 dark:bg-slate-900'>
+      <body className='antialiased text-slate-700 dark:text-slate-400 bg-emerald-50/50 dark:bg-slate-900'>
         <SwitchMode />
         <ReadingProvider>{children}</ReadingProvider>
       </body>
