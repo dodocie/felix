@@ -13,7 +13,7 @@ export default function Home() {
       <div className='mt-4 ml-6'><Search /></div>
 
       <div className={`${styles.center} relative flex items-center justify-center`}>
-        <div className='absolute -z-10 m-auto transform-gpu md:scale-3'><Flag /></div>
+        <div className='absolute -z-10 m-auto md:fixed md:bottom-1/4 transform-gpu md:scale-3 dark:invert'><Flag /></div>
         <div className='flex items-end'>
           <p className='text-3xl font-extrabold text-slate-800 dark:text-slate-100'>FELIX THE CAT</p>
           <Paw />
