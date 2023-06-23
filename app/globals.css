@@ -76,3 +76,9 @@ input{
   outline:none;
   background-color: transparent;
 }
+@media (max-width: 700px){
+  html, body{
+    height: 100%;
+  }
+}
+

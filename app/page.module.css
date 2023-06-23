@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 100vh;
-  max-height: 100vh;
+  height: 100vh;
+  overscroll-behavior: none;
 }
 
 .card {
@@ -78,6 +78,10 @@
   .content {
     padding: 4rem;
   }
+  .main, .list-page{
+    height: 100%;
+  }
+
 
   .grid {
     grid-template-columns: 1fr;

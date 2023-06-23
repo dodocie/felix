@@ -47,12 +47,6 @@ const changeMode = (isDark: boolean) => {
     doc.documentElement.classList.remove('dark')
   }
 }
-const scaleY = {
-  in: { opacity: 1, transform: 'scaleY(1)' },
-  out: { opacity: 0, transform: 'scaleY(0)' },
-  common: { transformOrigin: 'top' },
-  transitionProperty: 'transform, opacity',
-}
 
 export default function SwitchMode() {
   const [opened, setOpened] = useState(false)
@@ -62,8 +56,9 @@ export default function SwitchMode() {
   const isChanged = useRef(colorMode)
 
   const changeModeHandler = (e: MediaQueryListEvent) => {
-    //系统变成模式时候，如果用户手动选择了，且值不等于system，就不操作。
+    //系统变模式时候，如果用户手动选择了，且值不等于system，就不操作。
     if (isChanged.current === 'light' || isChanged.current === 'dark') return
+
     changeMode(e.matches)
   }
   useEffect(() => {
@@ -83,11 +78,16 @@ export default function SwitchMode() {
 
   const onChangeMode = (val: string) => {
     setMode(val)
-    // isChanged.current = val
+    const systemMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+
+    //选择跟随系统时，或者从跟随系统切换到自定义，如果新旧模式一致，不继续执行
+    if(val === 'auto' && systemMode === colorMode) return
+    if(colorMode === 'auto' && systemMode === val) return
+ 
     const isDark =
       val === 'dark' ||
       (val === 'auto' &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
+      systemMode === 'dark')
     changeMode(isDark)
   }
 

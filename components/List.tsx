@@ -12,7 +12,7 @@ const List = ({ data, className }: ListProps) => {
       {data.map((item) => (
         <li
           key={item.date}
-          className="py-2 rounded-md transition-colors hover:bg-teal-50 dark:hover:bg-teal-600"
+          className="py-2 rounded-md transition-colors md:hover:bg-teal-600/20 md:dark:hover:bg-slate-600/25"
         >
           <Link href={item.url} className="flex items-center justify-between space-x-2">
             <span className="flex-grow text-slate-800 dark:text-sky-300 line-clamp-1">{item.title}</span>
