@@ -12,6 +12,8 @@
   justify-content: space-between;
   height: 100vh;
   overscroll-behavior: none;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .card {
@@ -41,14 +43,18 @@
   z-index: -1;
 }
 
-.center::before,
+.center {
+  flex: 2;
+}
+
+/* .center::before,
 .center::after {
   content: '';
   top: 30%;
   position: absolute;
   filter: blur(45px);
   transform: translateZ(0);
-}
+} */
 
 .list {
   max-height: 80vh;
@@ -88,10 +94,6 @@
     max-width: 90vw;
     text-align: center;
     margin: auto;
-  }
-
-  .center {
-    flex: 2;
   }
 
   .center::before {

@@ -4,6 +4,7 @@ import Social from '@/components/Social'
 import Search from '@/components/Search'
 import ReadOnBanner from '@/components/ReadOn'
 import Paw from '@/icons/Paw'
+import Flag from '@/icons/Flag'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <div className='mt-4 ml-6'><Search /></div>
 
       <div className={`${styles.center} relative flex items-center justify-center`}>
+        <div className='absolute -z-10 m-auto transform-gpu md:scale-3'><Flag /></div>
         <div className='flex items-end'>
           <p className='text-3xl font-extrabold text-slate-800 dark:text-slate-100'>FELIX THE CAT</p>
           <Paw />
