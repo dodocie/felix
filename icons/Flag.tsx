@@ -9,12 +9,6 @@ export default function Flag() {
         </linearGradient>
       </defs>
       <defs>
-        <linearGradient id='waveGradient4'>
-          <stop offset='0%' stopColor='#dcfce7' stopOpacity="0" />
-          <stop offset='100%' stopColor='#f7fee7' stopOpacity="0.6" />
-        </linearGradient>
-      </defs>
-      <defs>
         <linearGradient id='waveGradient2' gradientTransform="rotate(90)">
           <stop offset='0%' stopColor='orange' stopOpacity="0.6"/>
           <stop offset='100%' stopColor='#ecfdf5' stopOpacity="0.52"/>
@@ -24,6 +18,12 @@ export default function Flag() {
         <linearGradient id='waveGradient3'cx="0.5" cy="0.5" r="0.5" fx="0.25" fy="0.25" gradientTransform="rotate(90)">
           <stop offset='0%' stopColor='#ecfdf5' stopOpacity="0.5"/>
           <stop offset='100%' stopColor='#f0fdfa'/>
+        </linearGradient>
+      </defs>
+      <defs>
+        <linearGradient id='waveGradient4'>
+          <stop offset='0%' stopColor='#dcfce7' stopOpacity="0" />
+          <stop offset='100%' stopColor='#f7fee7' stopOpacity="0.6" />
         </linearGradient>
       </defs>
       <path
@@ -63,22 +63,6 @@ export default function Flag() {
         />
       </path>
       <path
-        d='M0,150 C50,200 150,200 200,150 S350,100 400,150 S500,200 500,150 V200 H0 Z'
-        fill='url(#waveGradient4)'
-      >
-        <animate
-          attributeName='d'
-          attributeType='XML'
-          repeatCount='indefinite'
-          dur='12s'
-          values='
-          M0,150 C50,200 150,200 200,150 S350,100 400,150 S500,200 500,150 V200 H0 Z;
-          M0,150 C50,150 150,180 200,150 S350,150 400,150 S500,150 500,150 V200 H0 Z;
-          M0,150 C50,200 150,200 200,150 S350,100 400,150 S500,200 500,150 V200 H0 Z;
-                 '
-        />
-      </path>
-      <path
         d='M0,200 C100,100 200,200 200,200 C200,200 300,200 300,300 L200,200 Z'
         fill='url(#waveGradient3)'
       >
@@ -92,6 +76,22 @@ export default function Flag() {
                   M0,200 C100,100 200,100 200,100 C200,100 300,100 300,200 L200,200 Z;
                   M0,200 C100,100 200,80 200,80 C200,80 300,200 300,200 L200,200 Z;
                   M0,200 C100,100 200,80 200,80 C200,80 300,100 300,200 L200,200 Z'
+        />
+      </path>
+      <path
+        d='M0,150 C50,200 150,200 200,150 S350,100 400,150 S500,200 500,150 V200 H0 Z'
+        fill='url(#waveGradient4)'
+      >
+        <animate
+          attributeName='d'
+          attributeType='XML'
+          repeatCount='indefinite'
+          dur='12s'
+          values='
+          M0,150 C50,200 150,200 200,150 S350,100 400,150 S500,200 500,150 V200 H0 Z;
+          M0,150 C50,150 150,180 200,250 S350,150 400,120 S500,150 500,120 V200 H0 Z;
+          M0,150 C50,200 150,200 200,150 S350,100 400,150 S500,200 500,150 V200 H0 Z;
+                 '
         />
       </path>
     </svg>
