@@ -27,7 +27,7 @@ export default function Articles({
       <div className={`flex h-screen pt-8 pb-16 ${styles['list-page']}`}>
         <section className={`${styles.intro} rounded-md px-4 py-2 relative`}>
           <span className='text-lg font-semibold text-slate-600'>
-            Kiera’s {`${type}`}&nbsp;/&nbsp;
+            Kiera’s {`${type.toUpperCase()}`}&nbsp;/&nbsp;
           </span>
           <span className='text-2xl font-black text-slate-700'>
             {map[type][0]}
