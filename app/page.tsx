@@ -13,7 +13,7 @@ export default function Home() {
       <div className='mt-4 ml-6'><Search /></div>
 
       <div className={`${styles.center} relative flex items-center justify-center`}>
-        <div className='absolute -z-10 m-auto md:fixed md:bottom-1/4 transform-gpu md:scale-3 dark:invert'><Flag /></div>
+        <div className='absolute -z-10 m-auto opacity-40 md:fixed md:bottom-1/4 transform-gpu md:scale-3 dark:invert'><Flag /></div>
         <div className='flex items-end'>
           <p className='text-3xl font-extrabold text-slate-800 dark:text-slate-100'>FELIX THE CAT</p>
           <Paw />
@@ -39,7 +39,7 @@ export default function Home() {
           <Link href='/' className='text-lg font-semibold'>
             AI 自习室 <span>-&gt;</span>
           </Link>
-          <p className='mt-2 text-base text-gray-500'>还没想好怎么做~</p>
+          <p className='mt-2 text-base text-gray-500'>本项目暂停开发，博主要先考虑生存啊~</p>
         </div>
       </div>
       <ReadOnBanner />
