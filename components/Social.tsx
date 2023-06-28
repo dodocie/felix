@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Github from '@/icons/Github'
+import Juejin from '@/icons/Juejin'
 
 const LIST = [
   {
@@ -14,12 +15,12 @@ const LIST = [
   //   href: 'mailto:dodocie@gmail.com',
   //   className: 'hover:bg-[#e86125] hover:text-white',
   // },
-  // {
-  //   title: 'Twitter',
-  //   icon: TwitterIcon,
-  //   href: 'https://twitter.com/dodocie',
-  //   className: 'hover:bg-[#1d9bf0] hover:text-white',
-  // },
+  {
+    title: 'Juejin',
+    icon: Juejin,
+    href: 'https://juejin.cn/user/1327865776327544',
+    className: 'hover:bg-[#1E80FF] text-[#1E80FF] hover:text-white',
+  },
 ]
 
 const Social = () => {
