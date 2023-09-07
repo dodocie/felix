@@ -6,13 +6,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const allPost = [...allBlogs, ...allEssays]
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
     .map((item) => ({
-      url: `https://xxx${item.url}`,
+      url: `https://kiera.site${item.url}`,
       lastModified: new Date(),
     }))
 
   return [
     {
-      url: 'https://xxx',
+      url: 'https://kiera.site',
       lastModified: new Date(),
     },
     ...allPost,
