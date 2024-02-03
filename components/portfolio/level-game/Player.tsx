@@ -1,4 +1,4 @@
-import { RapierRigidBody, RigidBody, useRapier } from "@react-three/rapier"
+import { RigidBodyApi, RigidBody, useRapier } from "@react-three/rapier"
 import { useFrame } from "@react-three/fiber"
 import { useKeyboardControls } from "@react-three/drei"
 import { useRef, useEffect, useState } from "react"
@@ -7,10 +7,11 @@ import * as THREE from 'three'
 import { useLevelGameStore } from "@/store/useGame"
 
 export default function Player() {
-  const body = useRef<RapierRigidBody>(null)
+  const body = useRef<RigidBodyApi>(null)
 
   const [subscribeKeys, getKeys] = useKeyboardControls()
-  const { rapier, world: rapierWorld } = useRapier()
+  const { rapier, world } = useRapier()
+  const rapierWorld = world.raw()
   const [smoothedCameraPosition] = useState(() => new THREE.Vector3(0, 0, 0)) //镜头初始位置
   const [smoothedCameraTarget] = useState(() => new THREE.Vector3())
 

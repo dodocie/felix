@@ -29,10 +29,6 @@ tags:
 > ./node_modules/chevrotain/lib_esm/api_esm.mjs
 > Attempted import error: '../lib/src/api.js' does not contain a default export (imported as 'mod').
 
-这个包似乎是已经7个月没更新的`"next-contentlayer": "^0.3.4",`包的依赖。项目使用了这个包，所以无法更新nextjs版本到14。
-
-6. 控制台警告⚠️也太多了吧...
-
 >Import trace for requested module:
 >
 >./node_modules/chevrotain/lib_esm/api_esm.mjs
@@ -44,6 +40,10 @@ tags:
 >./node_modules/@react-three/rapier/dist/react-three-rapier.esm.js
 >
 >./app/portfolio/level-game/page.tsx
+
+观察👆🏻log，讲得很清楚，是`@react-three/rapier`的依赖`three-stdlib`的依赖，无法去掉有问题的chevrotain。先试试降级版本，换`@react-three/rapier@0.9`.
+
+6. 7个月没更新的`"next-contentlayer": "^0.3.4",`包。项目使用了这个包，所以无法更新nextjs版本到14。
 
 7. 墙壁阴影有很大的锯齿，像是在墙头安装了防盗铁刺一样。
 
