@@ -14,6 +14,7 @@ export default function Title({ blog }: { blog: Blog | Essay }) {
 
   useEffect(() => {
     observeIntersection({ref: titleRef, update})
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

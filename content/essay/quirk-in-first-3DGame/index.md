@@ -41,7 +41,10 @@ tags:
 >
 >./app/portfolio/level-game/page.tsx
 
-观察👆🏻log，讲得很清楚，是`@react-three/rapier`的依赖`three-stdlib`的依赖，无法去掉有问题的chevrotain。先试试降级版本，换`@react-three/rapier@0.9`.
+观察👆🏻log，讲得很清楚，是`@react-three/rapier`的依赖`three-stdlib`的依赖，无法去掉有问题的chevrotain。先试试降级版本，换`@react-three/rapier@0.9`，问题解决了。但是另外一个问题出现了，`contentlayer`的依赖`@shikijs`又在build时候报错：
+>✘ [ERROR] TypeError: Cannot use 'in' operator to search for 'themes' in txt
+>    at codeToTokens (file:///vercel/path0/node_modules/@shikijs/core/dist/index.mjs:731:18)
+>    at codeToHast (file:///vercel/path0/node_modules/@shikijs/core/dist/index.mjs:984:53)
 
 6. 7个月没更新的`"next-contentlayer": "^0.3.4",`包。项目使用了这个包，所以无法更新nextjs版本到14。
 

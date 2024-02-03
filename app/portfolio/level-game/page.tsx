@@ -140,7 +140,7 @@ function BlockEnd({ position = [0, 0, 0] }: { position?: [x: number, y: number, 
   </group>
 }
 
-export function BlockSpinner({ position = [0, 0, 0] }: { position?: [x: number, y: number, z: number] }) {
+function BlockSpinner({ position = [0, 0, 0] }: { position?: [x: number, y: number, z: number] }) {
   const obstacle = useRef(null)
   const [speed] = useState(() => (Math.random() + .2) * (Math.random() < .5 ? -1 : 1))
 
@@ -173,7 +173,7 @@ export function BlockSpinner({ position = [0, 0, 0] }: { position?: [x: number, 
 
   </group>
 }
-export function BlockLimbo({ position = [0, 0, 0] }: { position?: [x: number, y: number, z: number] }) {
+function BlockLimbo({ position = [0, 0, 0] }: { position?: [x: number, y: number, z: number] }) {
   const obstacle = useRef<null>(null)
   const [timeOffset] = useState(() => Math.random() * Math.PI * 2)
 
@@ -207,7 +207,7 @@ export function BlockLimbo({ position = [0, 0, 0] }: { position?: [x: number, y:
   </group>
 }
 
-export function BlockAxe({ position = [0, 0, 0] }: { position?: [x: number, y: number, z: number] }) {
+function BlockAxe({ position = [0, 0, 0] }: { position?: [x: number, y: number, z: number] }) {
   const obstacle = useRef<null>(null)
   const [timeOffset] = useState(() => Math.random() * Math.PI * 2)
 
