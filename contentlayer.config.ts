@@ -20,7 +20,6 @@ const fields: FieldDefs = {
   },
   description: {
     type: 'string',
-    required: true,
   },
 }
 
