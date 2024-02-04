@@ -5,7 +5,6 @@ import styles from '@/app/page.module.css'
 
 const artGroup = [
   { title: '一个小游戏', date: '2023-10-22', url: '/portfolio/level-game' },
-  { title: '测试用', date: '2023-10-23', url: '/portfolio/for-test' },
 ]
 
 export default function Page() {

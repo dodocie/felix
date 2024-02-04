@@ -1,5 +1,5 @@
 import { RigidBodyApi, RigidBody, useRapier } from "@react-three/rapier"
-import { useFrame } from "@react-three/fiber"
+import { useFrame, useThree } from "@react-three/fiber"
 import { useKeyboardControls } from "@react-three/drei"
 import { useRef, useEffect, useState } from "react"
 import * as THREE from 'three'
@@ -44,6 +44,8 @@ export default function Player() {
     body.current.setAngvel({ x: 0, y: 0, z: 0 })
   }
 
+  const {camera, gl} = useThree()
+
   useEffect(() => {
     const unsubscribePhase = useLevelGameStore.subscribe(
       state => state.phase,
@@ -73,6 +75,8 @@ export default function Player() {
       unsubscribeJump()
       unsubscribeAny()
       unsubscribePhase()
+      camera?.clear()
+      gl.dispose()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
