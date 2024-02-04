@@ -39,9 +39,9 @@ export default function Player() {
   const reset = () => {
     if (!body.current) return
     console.log('reset--')
-    body.current.setTranslation({ x: 0, y: 1, z: 0 }, false)
-    body.current.setLinvel({ x: 0, y: 0, z: 0 }, false)
-    body.current.setAngvel({ x: 0, y: 0, z: 0 }, false)
+    body.current.setTranslation({ x: 0, y: 1, z: 0 })
+    body.current.setLinvel({ x: 0, y: 0, z: 0 })
+    body.current.setAngvel({ x: 0, y: 0, z: 0 })
   }
 
   useEffect(() => {

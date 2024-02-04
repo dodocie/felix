@@ -31,6 +31,6 @@ export const DirectionalLight = () => {
       shadow-camera-bottom={-10}
       shadow-camera-left={-10}
     />
-    <ambientLight intensity={.5} />
+    <ambientLight intensity={.8} />
   </>
 }

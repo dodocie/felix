@@ -1,6 +1,6 @@
 'use client'
-import { useMemo, useRef, useState } from "react"
-import { useGLTF, KeyboardControls, Float, Text } from "@react-three/drei"
+import { useEffect, useMemo, useRef, useState } from "react"
+import { useGLTF, KeyboardControls, Float, Text, StatsGl, Sky } from "@react-three/drei"
 import { Canvas, useFrame } from "@react-three/fiber"
 import * as THREE from 'three'
 import { RigidBody, Physics, CuboidCollider } from "@react-three/rapier"
@@ -8,7 +8,8 @@ import { RigidBody, Physics, CuboidCollider } from "@react-three/rapier"
 import { DirectionalLight } from "@/components/lights/DirectionalLight"
 import Player from "@/components/portfolio/level-game/Player"
 import Interface from "@/components/portfolio/level-game/Interface"
-import Effects from "@/components/portfolio/level-game/Effects"
+// import Effects from "@/components/portfolio/level-game/Effects"
+import CloudSky from "@/components/portfolio/clouds"
 
 import { useLevelGameStore } from '@/store/useGame'
 
@@ -34,11 +35,10 @@ const obstacleMaterial = new THREE.MeshStandardMaterial({ color: 'orange', metal
 const wallMaterial = new THREE.MeshStandardMaterial({ color: 'slategrey', metalness: 0, roughness: 0 })
 
 export default async function Page() {
-
   const blockCount = useLevelGameStore(state => state.blockCount)
   const blockSeed = useLevelGameStore(state => state.blockSeed)
 
-  return <div className="h-screen">
+  return <div className="h-screen w-full">
     <KeyboardControls
       map={[
         { name: 'forward', keys: ['ArrowUp', 'KeyW'] },
@@ -53,12 +53,15 @@ export default async function Page() {
         gl={{ antialias: true }}
         camera={{ position: [2.5, 4, 6], fov: 45, near: .1, far: 200 }}
       >
+        <StatsGl />
+        <Sky />
         <Physics>
           {/* interpolate={false} colliders={false} */}
           <Level count={blockCount} seed={blockSeed} />
           <Player />
         </Physics>
         {/* <Effects /> */}
+        <CloudSky />
         <DirectionalLight />
       </Canvas>
       <Interface />

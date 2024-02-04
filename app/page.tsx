@@ -39,7 +39,7 @@ export default function Home() {
           <Link href='/portfolio' className='text-lg font-semibold'>
             2D/3D作品集 <span>-&gt;</span>
           </Link>
-          <p className='mt-2 text-base text-gray-500'>本项目暂停开发，博主要先考虑生存啊~</p>
+          <p className='mt-2 text-base text-gray-500'>效果预览，持续更新~</p>
         </div>
       </div>
       <ReadOnBanner />
