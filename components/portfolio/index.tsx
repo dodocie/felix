@@ -4,7 +4,7 @@ import List from '@/components/List'
 import styles from '@/app/page.module.css'
 
 const artGroup = [
-  { title: '一个小游戏', date: '2023-10-22', url: '/portfolio/level-game' },
+  { title: '一个小游戏', date: '2023-10-22', url: 'https://whisper.kiera.site/' },
 ]
 
 export default function Page() {
