@@ -4,7 +4,7 @@ import List from '@/components/List'
 import styles from '@/app/page.module.css'
 
 const artGroup = [
-  { title: '一个小游戏', date: '2023-10-22', url: 'https://demo.kiera.site/' },
+  { title: '一个小游戏', date: '2023-10-22', url: 'https://demos.kiera.site/' },
 ]
 
 export default function Page() {
