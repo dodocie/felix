@@ -1,11 +1,3 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(33.3333%, auto));
-  width: var(--max-width);
-  margin: 0 auto 4rem;
-  max-width: 100%;
-}
-
 .main {
   display: flex;
   flex-direction: column;

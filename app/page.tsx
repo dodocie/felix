@@ -20,7 +20,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className={styles.grid}>
+      <div className='grid grid-cols-3 gap-5 px-20'>
         <div className={`${styles.card} mb-8`}>
           <Link href='/blog' className='text-lg font-semibold'>
             前端探索 <span>-&gt;</span>

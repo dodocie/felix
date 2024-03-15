@@ -1,5 +1,7 @@
 
 import List from '@/components/List'
+import ShaderContainer, { ShaderContainer2 } from '@/shaders'
+import Inkwash from '@/shaders/ink-wash'
 
 import styles from '@/app/page.module.css'
 
@@ -21,9 +23,13 @@ export default function Page() {
 
       </section>
       <List
-          className={`${styles.list} rounded-md px-4 py-2 bg-teal-600/[.06] dark:bg-slate-800/[.6]`}
+          className={`${styles.list} rounded-md px-4 py-2 bg-teal-700/[.16] dark:bg-slate-800/[.6]`}
           data={artGroup}
         />
+    </div>
+    <div className='fixed top-0 left-0 -z-10'>
+      {/* <ShaderContainer><Inkwash /></ShaderContainer> */}
+      <ShaderContainer2 />
     </div>
   </>
 }
