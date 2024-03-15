@@ -36,7 +36,7 @@ export default function Home() {
           <p className='mt-2 text-base text-gray-500'>一些碎片化的知识和趣闻。</p>
         </div>
         <div className={`${styles.card} mb-8`}>
-          <Link href='/portfolio' className='text-lg font-semibold'>
+          <Link href='https://demos.kiera.site' className='text-lg font-semibold'>
             2D/3D作品集 <span>-&gt;</span>
           </Link>
           <p className='mt-2 text-base text-gray-500'>效果预览，持续更新~</p>
