@@ -20,10 +20,11 @@ tags:
 
 `R3F`提供的`<Canvas>`组件，不需要为画布`Size`烦恼，因为画布宽高并没有暴露接口设置，而样式宽高会继承其父组件宽高。一般我们会设置canvas的width和height属性为实际需要显示的两倍大小来保证清晰度。然而即便设置了`antilias`为`true`，又尝试将`dpr`属性设置为2，`R3F`依旧没有对此做处理。
 
-如果在子组件使用useThree狗子返回的`gl`属性重新设置setSize？
+如果在子组件使用useThree钩子返回的`gl`属性重新设置setSize？
 
 此外，和颜色相关的属性配置如下：
 -   outputColorSpace = THREE.SRGBColorSpace
 -   toneMapping = THREE.ACESFilmicToneMapping | THREE.CineonToneMapping
 尝试以上方法，无法解决颜色渲染变浅的问题。像是给场景加了一个强度为10的环境光一样变白。
 
+或许是使用`renderTarget`和threejs/jsm库交换缓存区函数的原因？`R3F`没有`renderTarget`概念。以上问题在最简单粗暴的方式下解决了：去掉`renderTarget`。但绘制图像的顶点y坐标出现了巨大的差异。
