@@ -27,4 +27,6 @@ tags:
 -   toneMapping = THREE.ACESFilmicToneMapping | THREE.CineonToneMapping
 尝试以上方法，无法解决颜色渲染变浅的问题。像是给场景加了一个强度为10的环境光一样变白。
 
-或许是使用`renderTarget`和threejs/jsm库交换缓存区函数的原因？`R3F`没有`renderTarget`概念。以上问题在最简单粗暴的方式下解决了：去掉`renderTarget`。但绘制图像的顶点y坐标出现了巨大的差异。
+或许是使用`renderTarget`和threejs/jsm库交换缓存区函数的原因？`R3F`没有`renderTarget`概念。以上问题在最简单粗暴的方式下解决了：去掉`renderTarget`。
+
+现在，绘制图像的顶点坐标出现了巨大的差异。使用`R3F`提供的`<Canvas>`组件，默认dpr为2。如果设置为1，那么正常。这行代码 `<PerformanceMonitor onIncline={() => setDpr(1.5)} onDecline={() => setDpr(1)} />` 也会导致这个问题在页面渲染后过几秒出现。这一定有原因，需要系统学习`GLSL`。
